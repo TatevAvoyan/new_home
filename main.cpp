@@ -1,23 +1,31 @@
 #include "iostream"
 using namespace std;
 
-class Test{
-    int num1;
+class Test {
+    int num;
 public:
-    Test(int n1){
-        this->num1 = n1;
+    Test(int n){
+        this->num = n;
     }
-    Test operator + (const Test){
-        this->num1--;
+    void operator ++(){
+        num*=num;
+    }
+    void operator --(){
+        ++num;
+    }
+    void print_num(){
+        cout << "num = " << num << endl;
     }
 };
 
-
-int main(){
-
-    Test test(5);
-    test.operator+(test);
-
+int main()
+{
+    Test test(10);
+    test.print_num();
+    ++test;
+    test.print_num();
+    --test;
+    test.print_num();
 
     return 0;
 }
