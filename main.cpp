@@ -1,22 +1,22 @@
 #include "iostream"
 using namespace std;
 
-void print_triangle(int rows){
-    for(int i = rows; i >= 1; i--){
+void print_triangle(int rows, string space){
 
-        for(int space = 0; space < rows-i; space++){
-            cout << " ";
-        }
-        for(int j = i; j <= 2*i-1; j++) {
-            cout << "* ";
-        }
-
-        cout << endl;
+    if (rows >= 1) {
+       for(int i = 0; i < rows; i++){
+           cout << " *";
+       }
+       cout << "\n";
+       space += " ";
+       cout << space;
+       print_triangle(rows - 1, space);
     }
 }
+
 int main(){
 
-    print_triangle(7);
+    print_triangle(7, "");
 
     return 0;
 }
