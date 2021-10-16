@@ -1,23 +1,32 @@
 #include "iostream"
 using namespace std;
 
-void print_triangle(int rows){
-    for(int i = rows; i >= 1; --i)
-    {
-        for(int space = 0; space < rows-i; space++)
-            cout << "  ";
+void print_hello(){
 
-        for(int j = i; j <= 2*i-1; j++)
-            cout << "* ";
+    char hello;
+    std::cin >> hello;
 
-        for(int j = 0; j < i-1; j++)
-            cout << "* ";
-        cout << endl;
+    switch (hello) {
+        case 'h' : case 'y' : std::cout << "Barev"; break;
+        case 'r' : case 'u' : std::cout << "Privet"; break;
+        case 'e' : case 'n' : std::cout << "Hello"; break;
+        default : std::cout << "Hi";
     }
+
+    /* if ( w == "hy"){
+         std::cout << "Barev";
+     } else if (w == "ru"){
+         std::cout << "Privet";
+     } else if (w == "en"){
+         std::cout << "Hello";
+     } else{
+         std::cout << "Hi";
+     }*/
+
 }
 int main(){
 
-    print_triangle(5);
+    print_hello();
 
     return 0;
 }
