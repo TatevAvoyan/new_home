@@ -1,26 +1,23 @@
 #include "iostream"
+using namespace std;
 
+void print_triangle(int rows){
+    for(int i = rows; i >= 1; --i)
+    {
+        for(int space = 0; space < rows-i; space++)
+            cout << "  ";
 
-//80-110 eranish tveri qarakusinery
+        for(int j = i; j <= 2*i-1; j++)
+            cout << "* ";
 
-void print_rec(int start, int end){
-    if(start <= 99){
-        start++;
-        print_rec(start, end);
-    }else{
-        if(start < end){
-            std::cout << start * start << "\n";
-            start++;
-            print_rec(start, end);
-        }
+        for(int j = 0; j < i-1; j++)
+            cout << "* ";
+        cout << endl;
     }
 }
+int main(){
 
-
-
-int main() {
-
-    print_rec(80, 110);
+    print_triangle(5);
 
     return 0;
 }
